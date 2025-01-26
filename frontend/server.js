@@ -2,6 +2,9 @@
 import express from 'express';
 import path from 'path';
 
+// Get the directory name from import.meta.url
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
 // Create an express app.
 const app = express();
 
@@ -17,5 +20,3 @@ app.get('*', function (req, res) {
 app.listen(80, () => {
   console.log('Server is running on port 80');
 });
-
-
