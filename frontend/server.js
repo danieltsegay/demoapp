@@ -5,15 +5,16 @@ const path = require('path');
 // Create an express app.
 const app = express();
 
-// Serve the static files from the React app.
-app.use(express.static(path.join(__dirname, 'build')));
+// Serve the static files from the dist directory.
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // Redirect every request to index.html.
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Listen to the default port 80.
 app.listen(80, () => {
   console.log('Server is running on port 80');
 });
+
