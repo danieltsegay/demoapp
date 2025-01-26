@@ -1,6 +1,6 @@
-// Import express and path modules.
-const express = require('express');
-const path = require('path');
+// Import express and path modules using ES modules import syntax
+import express from 'express';
+import path from 'path';
 
 // Create an express app.
 const app = express();
@@ -17,4 +17,5 @@ app.get('*', function (req, res) {
 app.listen(80, () => {
   console.log('Server is running on port 80');
 });
+
 
